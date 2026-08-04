@@ -212,6 +212,8 @@ header.active{
 
     align-items:center;
 
+    padding-top:120px;
+
     text-align:center;
 
     position:relative;
@@ -236,6 +238,8 @@ header.active{
     z-index:5;
 
     max-width:900px;
+
+    transform:translateY(45px);
 
     animation:aparecer 1.5s;
 
@@ -1183,6 +1187,18 @@ footer hr{
 
 @media(max-width:992px){
 
+.hero{
+
+padding-top:150px;
+
+}
+
+.hero-content{
+
+transform:translateY(70px);
+
+}
+
 .hero h1{
 
 font-size:65px;
@@ -1225,6 +1241,24 @@ justify-content:center;
 
 @media(max-width:768px){
 
+.hero{
+
+min-height:100vh;
+
+height:auto;
+
+padding-top:190px;
+
+padding-bottom:80px;
+
+}
+
+.hero-content{
+
+transform:translateY(45px);
+
+}
+
 .navbar{
 
 flex-direction:column;
@@ -1255,7 +1289,9 @@ line-height:50px;
 
 .hero h3{
 
-font-size:18px;
+font-size:16px;
+
+letter-spacing:4px;
 
 }
 

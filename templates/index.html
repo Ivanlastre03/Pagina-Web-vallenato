@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Corazón del Vallenato</title>
-  <link rel="stylesheet" th:href="@{/styles.css}">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -155,7 +156,7 @@
     <div class="artistas-grid">
       <div class="artista-card">
         <div class="foto">
-          <img th:src="@{/img/diomedes.jpg}" alt="Diomedes Díaz">
+          <img src="{% static 'img/diomedes.jpg' %}" alt="Diomedes Díaz">
         </div>
         <h3>Diomedes Díaz</h3>
         <p>
@@ -165,7 +166,7 @@
 
       <div class="artista-card">
         <div class="foto">
-          <img th:src="@{/img/poncho.jpg}" alt="Poncho Zuleta">
+          <img src="{% static 'img/poncho.jpg' %}" alt="Poncho Zuleta">
         </div>
         <h3>Poncho Zuleta</h3>
         <p>
@@ -175,7 +176,7 @@
 
       <div class="artista-card">
         <div class="foto">
-          <img th:src="@{/img/jorge.jpg}" alt="Jorge Oñate">
+          <img src="{% static 'img/jorge.jpg' %}" alt="Jorge Oñate">
         </div>
         <h3>Jorge Oñate</h3>
         <p>
@@ -185,7 +186,7 @@
 
       <div class="artista-card">
         <div class="foto">
-          <img th:src="@{/img/silvestre.jpg}" alt="Silvestre Dangond">
+          <img src="{% static 'img/silvestre.jpg' %}" alt="Silvestre Dangond">
         </div>
         <h3>Silvestre Dangond</h3>
         <p>
@@ -231,7 +232,7 @@
 
       <p>
         Esta página fue desarrollada como un proyecto académico para demostrar
-        conocimientos en HTML, CSS y JavaScript.
+        conocimientos en HTML, CSS, Django.
       </p>
 
       <div class="autor">
@@ -244,15 +245,17 @@
   </section>
 
   <section class="playlist">
-    <h2>Cantantes desde Spring Boot</h2>
-    <p>Esta lista llega desde el controlador Java usando Thymeleaf.</p>
+    <h2>Cantantes desde Django</h2>
+    <p>Esta lista llega desde la vista de Python usando el motor de plantillas de Django.</p>
 
     <div class="playlist-grid">
-      <div class="song" th:each="cantante : ${cantantes}">
-        <i class="fa-solid fa-microphone"></i>
-        <h3 th:text="${cantante}">Cantante</h3>
-        <span>Vallenato colombiano</span>
-      </div>
+      {% for cantante in cantantes %}
+        <div class="song">
+          <i class="fa-solid fa-microphone"></i>
+          <h3>{{ cantante }}</h3>
+          <span>Vallenato colombiano</span>
+        </div>
+      {% endfor %}
     </div>
   </section>
 
@@ -298,6 +301,6 @@
     </p>
   </footer>
 
-  <script th:src="@{/script.js}"></script>
+  <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
